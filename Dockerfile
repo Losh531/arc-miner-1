@@ -2,7 +2,7 @@ FROM node:latest
 # Create app directory
 WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm install
+RUN npm install puppeteer --save
 RUN npm ci --only=production
 COPY . .
-CMD [ "bash main.sh" ]
+CMD ["npm", "start"]
