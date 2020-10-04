@@ -1,0 +1,23 @@
+{
+  "name": "this-time-we-are-getting-puppeteer",
+  "version": "1.0.0",
+  "description": "Something like a test you know?",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"no file specified\" && exit=1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "puppeteer"
+  ],
+  "author": "coder100",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^2.1.1"
+  }
+}
