@@ -43,9 +43,10 @@ while (i < 6) {
 
   try {    
     var one = 1;
+process.setMaxListeners(Infinity);
     while(1 == one){
-        
-	await delay(Math.floor((Math.random() * 4000) + 2000));
+   
+  await delay(Math.floor((Math.random() * 4000) + 2000));
   const browser = await puppeteer.launch({ args: ['--no-sandbox'] });;
   const page = await browser.newPage();
   await page.goto('https://arcio-server.losh531.repl.co');
