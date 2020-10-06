@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
   response.send(200);
 });
 
-const puppeteer = require('puppeteer');
+/*const puppeteer = require('puppeteer');
 process.setMaxListeners(Infinity);
 (async () => {
   let i = 0;
@@ -33,11 +33,27 @@ while (i < 6) {
   await console.log("At Website")
   i++;
 }
-
+*/
 
   //await browser.close();
 })();
+(async function example() {
 
+  try {    
+    var one = 1;
+    while(1 == one){
+        
+	await delay(Math.floor((Math.random() * 4000) + 2000));
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });;
+  const page = await browser.newPage();
+  await page.goto('https://arcio-server.losh531.repl.co');
+  await console.log("At Website")
+
+    }
+  } finally {
+    await console.log("ending")
+  }
+})();
 // listen for requests :)
 const listener = app.listen(3000, () => {
   console.log("Your app is listening on port " + listener.address().port);
