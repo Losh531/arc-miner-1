@@ -42,10 +42,10 @@ while (i < 6) {
 (async function example() {
 
   try {    
-    var one = 1;
+    let i = 0;
    
 process.setMaxListeners(Infinity);
-    while(1 == one){
+    while(i < 40){
    
   await delay(Math.floor((Math.random() * 4000) + 2000));
  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });;
@@ -53,7 +53,7 @@ process.setMaxListeners(Infinity);
   await page.setDefaultNavigationTimeout(0); 
   await page.goto('https://arcio-server.losh531.repl.co');
   await console.log("At Website")
-
+i++;
     }
   } finally {
     await console.log("ending")
