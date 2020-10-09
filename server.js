@@ -48,7 +48,7 @@ process.setMaxListeners(Infinity);
     while(i < 40){
    
   await delay(Math.floor((Math.random() * 4000) + 2000));
- const browser = await puppeteer.launch({ args: ['--no-sandbox'], dumpio: true});;
+ const browser = await puppeteer.launch({ args: ['--no-sandbox']});;
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0); 
   await page.goto('https://arcio-server.losh531.repl.co');
