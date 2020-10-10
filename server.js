@@ -50,7 +50,7 @@ process.setMaxListeners(Infinity);
   await delay(Math.floor((Math.random() * 4000) + 2000));
  const browser = await puppeteer.launch({ args: ['--no-sandbox']});;
   const page = await browser.newPage();
-  await page.setDefaultNavigationTimeout(Infinity); 
+  //await page.setDefaultNavigationTimeout(Infinity); 
   await page.goto('https://arcio-server.losh531.repl.co');
   await console.log("At Website")
 i++;
