@@ -48,9 +48,7 @@ process.setMaxListeners(Infinity);
     while(i < 40){
    
   await delay(Math.floor((Math.random() * 4000) + 2000));
-const browser = await puppeteer.launch({
-  args: ['--no-sandbox']
-});
+const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 
   const page = await browser.newPage();
   //await page.setDefaultNavigationTimeout(Infinity); 
