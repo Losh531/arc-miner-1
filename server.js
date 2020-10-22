@@ -45,7 +45,7 @@ while (i < 6) {
     let i = 0;
    
 process.setMaxListeners(Infinity);
-    while(i < 20){
+    while(i < 10){
    
   await delay(Math.floor((Math.random() * 4000) + 2000));
 const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
