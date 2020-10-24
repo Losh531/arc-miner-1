@@ -5,7 +5,8 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
-
+const delay = require('delay');
+const puppeteer = require('puppeteer')
 // our default array of dreams
 const dreams = [
   "Find and count some sheep",
@@ -22,7 +23,7 @@ app.get("/", (request, response) => {
   response.send(200);
 });
 
-const puppeteer = require('puppeteer');
+/*const puppeteer = require('puppeteer');
 process.setMaxListeners(Infinity);
 (async () => {
   let i = 0;
@@ -30,14 +31,35 @@ while (i < 6) {
   const browser = await puppeteer.launch({ args: ['--no-sandbox'] });;
   const page = await browser.newPage();
   await page.goto('https://arcio-server.losh531.repl.co');
-  await console.log("At Website")
+  await console.log("At Website " + i)
   i++;
 }
 
 
   //await browser.close();
 })();
+*/
+(async function example() {
 
+  try {    
+    let i = 0;
+   
+process.setMaxListeners(Infinity);
+    while(i < 10){
+   
+  await delay(Math.floor((Math.random() * 4000) + 2000));
+const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
+
+  const page = await browser.newPage();
+  //await page.setDefaultNavigationTimeout(Infinity); 
+  await page.goto('https://arcio-server.losh531.repl.co');
+  await console.log("At Website " + i)
+i++;
+    }
+  } finally {
+    await console.log("ending")
+  }
+})();
 // listen for requests :)
 const listener = app.listen(3000, () => {
   console.log("Your app is listening on port " + listener.address().port);
