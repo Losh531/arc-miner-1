@@ -25,5 +25,8 @@
     "node",
     "glitch",
     "express"
-  ]
+  ],
+  "devDependencies": {
+    "@architect/sandbox": "^3.3.5"
+  }
 }
